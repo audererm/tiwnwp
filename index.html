@@ -26,14 +26,24 @@ layout: default
     <div id="main_content_wrap" class="outer">
 -       <section id="main_content" class="inner">
     <!-- CONTENT -->
-    <ul>
-  {% for post in site.posts %}
-    <li>
-      <a href="{{ post.url }}">{{ post.title }}</a>
-      {{ post.excerpt }}
-    </li>
-  {% endfor %}
-</ul>
+    <ul class="post-list">
+    {% for post in site.posts %}
+
+    {% if post.category == "poem" %}
+    {% else if %}
+      <li>
+        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+
+        <h2>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </h2>
+	<h4>
+	  {{ post.excerpt }}
+	</h4>
+      </li>
+      {% endif b%}
+      {% endfor %}
+  </ul>
         
 </div></section>
 
